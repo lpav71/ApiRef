@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
-use L5Swagger\Http\Controllers\SwaggerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +31,4 @@ Route::get('/clear', function () {
 
 Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('api/documentation', [SwaggerController::class, 'api']);
-Route::get('api/documentation/json', [SwaggerController::class,"json"]);
 
