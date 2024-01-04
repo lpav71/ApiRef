@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Models\Position;
 use App\Models\User;
 use App\Models\UserSetting;
-use App\Providers\UserCommon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
 
@@ -14,7 +13,6 @@ class PositionController extends Controller
 {
     protected UserSetting $userSetting;
     protected User $user;
-    protected UserCommon $userCommon;
     protected Position $position;
 
     /**
@@ -22,11 +20,10 @@ class PositionController extends Controller
      * @param User $user
      * @param Position $position
      */
-    public function __construct(UserSetting $userSetting, User $user, UserCommon $userCommon, Position $position)
+    public function __construct(UserSetting $userSetting, User $user, Position $position)
     {
         $this->userSetting = $userSetting;
         $this->user = $user;
-        $this->userCommon = $userCommon;
         $this->position = $position;
         $this->middleware('auth:api');
     }

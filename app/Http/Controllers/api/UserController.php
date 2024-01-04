@@ -7,7 +7,6 @@ use App\Models\Client;
 use App\Models\ClientsNotes;
 use App\Models\User;
 use App\Models\UserAccess;
-use App\Providers\UserCommon;
 use Illuminate\Http\Request;
 
 class UserController extends Controller

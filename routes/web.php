@@ -30,10 +30,8 @@ Route::get('/clear', function () {
     return "Cache cleared successfully";
 });
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('swagger/documentation', [SwaggerController::class], 'api');
-Route::get('swagger/documentation/json', [SwaggerController::class],"json");
-Route::group(['middleware' => 'web'], function () {
+Route::get('api/documentation', [SwaggerController::class, 'api']);
+Route::get('api/documentation/json', [SwaggerController::class,"json"]);
 
-});
