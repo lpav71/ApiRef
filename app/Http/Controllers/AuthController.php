@@ -22,10 +22,34 @@ class AuthController extends Controller
 
     /**
      * @OA\Post(
-     *     path="/api/login",
-     *     @OA\Response(response="200", description="An example endpoint")
+     *     path="/api/auth/login",
+     *     tags={"YourTag"},
+     *     summary="Summary of the endpoint",
+     *     description="Description of the endpoint",
+     *     @OA\RequestBody(
+     *         required=true,
+     *         @OA\MediaType(
+     *             mediaType="application/x-www-form-urlencoded",
+     *             @OA\Schema(
+     *                 type="object",
+     *                 @OA\Property(
+     *                     property="email",
+     *                     type="string"
+     *                 ),
+     *                 @OA\Property(
+     *                     property="password",
+     *                     type="integer"
+     *                 )
+     *             )
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response="200",
+     *         description="Successful operation"
+     *     )
      * )
      */
+
     public function login()
     {
         $credentials = request(['email', 'password']);
